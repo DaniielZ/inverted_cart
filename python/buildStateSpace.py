@@ -33,16 +33,16 @@ def buildStateSpace(mr, mk, Lk, rr, g):
     
     return A, B
 
+if __name__ == "__main__":
+    # Test for stability
+    A, B = buildStateSpace(mr=2, mk=80, Lk=1.0, rr=0.2, g=9.81)
+    print(A)
+    print(B)
+    lam = np.linalg.eigvals(A)
+    print (lam)
 
-# Test for stability
-A, B = buildStateSpace(mr=2, mk=80, Lk=1.0, rr=0.2, g=9.81)
-print(A)
-print(B)
-lam = np.linalg.eigvals(A)
-print (lam)
-
-if np.all(np.real(lam) < 0):     # any growing mode due to exponential growth offset decaying modes
-    print("System is stable")  
-else:
-    print("System is unstable")
+    if np.all(np.real(lam) < 0):     # any growing mode due to exponential growth offset decaying modes
+        print("System is stable")  
+    else:
+        print("System is unstable")
     
