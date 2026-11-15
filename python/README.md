@@ -5,7 +5,7 @@ This folder contains the Python calculations for the inverted-cart model.
 ## Requirements
 
 - Python 3.10+
-- `numpy`
+- `numpy`, `scipy`, `matplotlib`
 
 ## Setup
 
@@ -23,7 +23,6 @@ pip install -r requirements.txt
 
 ```powershell
 python buildStateSpace.py
-python computeEquilibriumTorque.py
 ```
 
 ## Exit the virtual environment
